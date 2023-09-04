@@ -4,13 +4,13 @@ from .base import Base
 from .associations import author_book_association
 
 class Author(Base):
-    # creation of the table 
-    __tablename__ = 'authors'
-    id = Column(Integer, primary_key=True)
-    name = Column(String)
+#     # creation of the table 
+#     __tablename__ = 'authors'
+#     id = Column(Integer, primary_key=True)
+#     name = Column(String)
     books = relationship("Book", secondary=author_book_association, back_populates="authors")
-# # to create a one to many relationship Book 
-    # books = relationship("Book", back_populates="authors")
+# # # to create a one to many relationship Book 
+#     # books = relationship("Book", back_populates="authors")
     
     # oop operations 
     def __init__(self,name):
